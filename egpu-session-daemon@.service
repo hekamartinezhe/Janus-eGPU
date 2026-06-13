@@ -1,12 +1,11 @@
 [Unit]
 Description=eGPU Session Selector for user %I
 Before=display-manager.service
-After=systemd-user-sessions.service
+After=local-fs.target
 
 [Service]
-Type=notify
+Type=oneshot
 ExecStart=/usr/local/bin/egpu-session-daemon %I
-Restart=no
 RemainAfterExit=yes
 StandardOutput=journal
 StandardError=journal
