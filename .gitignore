@@ -1,0 +1,4 @@
+egpu-session-daemon
+*.o
+.vscode/
+
